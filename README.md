@@ -1,5 +1,7 @@
-# LeetCode-HackerRank-Solutions
+# Leet Code & HackerRank Solutions
 
+
+## LeetCode
 - 01. Two sum /python
 - 02. Add two numbers /c#
 - 19. Remove Nth Node From End of List /c#
