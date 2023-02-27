@@ -139,6 +139,7 @@ vscode
 bin/
 obj/
 
+.sln
 .exe
 .zip
 .docx
