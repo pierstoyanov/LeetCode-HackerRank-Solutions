@@ -139,7 +139,7 @@ vscode
 bin/
 obj/
 
-
+.exe
 .zip
 .docx
 *.zip
