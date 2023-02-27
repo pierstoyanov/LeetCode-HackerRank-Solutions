@@ -23,6 +23,9 @@
 
 - 02. Compare the triplets /C#
 - 03. Simple array sum /C++
+- 04. A very big sum /C++
+- 05. Diagonal Difference /C++
+- 06. Plus Mius /C++
 
 ### Other
 - Fiz Buzz /C#
