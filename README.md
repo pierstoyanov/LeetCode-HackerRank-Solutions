@@ -21,7 +21,8 @@
 
 #### Warmup
 
-- 02. Compare the triplets / C#
+- 02. Compare the triplets /C#
+- 03. Simple array sum /C++
 
 ### Other
 - Fiz Buzz /C#
