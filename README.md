@@ -6,6 +6,8 @@
 - 02. Add two numbers /c#
 - 19. Remove Nth Node From End of List /c#
 - 20. Valid Parenthesis /c#
+- 94. Binary Tree In-order traversal /c#
+- 94. Binary Tree In-order traversal - Iterative solution /c#
 - 743. Network Delay time /c#
 
 
