@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using static LeetCode._94_BinaryTreeInOrderIter;
 
 namespace LeetCode
 {
@@ -6,7 +7,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ValidParenthesis();
+
         }
 
         private static void ValidParenthesis()

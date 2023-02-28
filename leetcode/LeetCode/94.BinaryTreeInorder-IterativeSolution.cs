@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace LeetCode
 {
-    public class _94_BinaryTreeInOrder
+    public class _94_BinaryTreeInOrderIter
     {
         public class TreeNode
         {
@@ -16,22 +16,30 @@ namespace LeetCode
                 this.right = right;
             }
         }
+
         public IList<int> InorderTraversal(TreeNode root)
         {
             if (root == null) { return new List<int>(); }
 
             var result = new List<int>();
+            Stack<TreeNode> stack = new Stack<TreeNode>();
 
-            if (root.left != null) 
-            {
-                result.AddRange(InorderTraversal(root.left));
-            }
-            
-            result.Add(root.val);
+            var currentNode = root;
 
-            if (root.right != null)
+            while (currentNode != null || stack.Count > 0) 
             {
-                result.AddRange(InorderTraversal(root.right));
+                // reach bottom left
+                while (currentNode != null)
+                {
+                    stack.Push(currentNode);
+                    currentNode = currentNode.left;
+                }
+
+                currentNode = stack.Pop();
+
+                result.Add(currentNode.val);
+
+                currentNode = currentNode.right;
             }
 
             return result;
