@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 
-using namespace std ;
+using namespace std;
 
 int diagonalDifference(vector<vector<int>> arr) {
     int diag = 0, revDiag = 0;
@@ -16,31 +16,32 @@ int diagonalDifference(vector<vector<int>> arr) {
     return abs(diag - revDiag);
 }
 
-// int main()
-// {
-//     int n;
-//     cin >> n;
-//     vector<vector<int>> arr(n);
-//     for (size_t i = 0; i < n; i++)
-//     {
-//         vector<int> line;
+int main()
+{
+    vector<vector<int>> arr;
+    int n;
+    cin >> n;
+ 
+    for (int i = 0; i < n; i++)
+    {
+        vector<int> line;
 
-//         std::string input;
-//         getline(std::cin, input);
-//         std::istringstream iss(input);
-//         int number;
-//         while (iss >> number)
-//         {
-//             line.push_back(number);
-//         }
-//         arr.push_back(line);
-//     }
+        string input;
+        getline(cin, input);
+        
+        istringstream iss(input);
+        int number;
+        while (iss >> number)
+        {
+            line.push_back(number);
+        }
+        arr.push_back(line);
+    }
 
-//     for (int i = 0; i < n; i++)
-//     {
-//         auto vec = arr[i];
-//         std::string str(vec.begin(), vec.end());
-//         cout << str << endl;
-//     }
-    
-// }
+    for (int i = 0; i < n; i++)
+    {
+        auto vec = arr[i];
+        string str(vec.begin(), vec.end());
+        cout << str << endl;
+    }   
+}
