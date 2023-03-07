@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
-using static LeetCode._94_BinaryTreeInOrderIter;
+
+using static LeetCode._98_ValidateBST;
 
 namespace LeetCode
 {
@@ -7,7 +8,8 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-
+            var t = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+            Console.WriteLine(IsValidBST(t));
         }
 
         private static void ValidParenthesis()
