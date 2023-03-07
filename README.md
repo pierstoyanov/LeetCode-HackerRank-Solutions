@@ -9,6 +9,7 @@
 - 94. Binary Tree In-order traversal /c#
 - 94. Binary Tree In-order traversal - Iterative solution /c#
 - 98. Validate Binary Tree /c#
+- 112. Path sum /c#
 - 743. Network Delay time /c#
 
 
