@@ -31,5 +31,9 @@
 - 05. Diagonal Difference /C++
 - 06. Plus Mius /C++
 
+### C++
+- String
+- String Stream
+
 ### Other
 - Fiz Buzz /C#
