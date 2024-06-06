@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-using static LeetCode._98_ValidateBST;
+using static LeetCode._112_PathSum;
 
 namespace LeetCode
 {
@@ -8,8 +8,17 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var t = new TreeNode(2, new TreeNode(1), new TreeNode(3));
-            Console.WriteLine(IsValidBST(t));
+            var t = new TreeNode(5, 
+                        new TreeNode(4, 
+                            new TreeNode(11,
+                                new TreeNode(7),
+                                new TreeNode(2)), 
+                        new TreeNode(8, 
+                            new TreeNode(13),
+                            new TreeNode(4, null,
+                                new TreeNode(1)))));
+            var targetSum = 22;
+            Console.WriteLine(HasPathSum(t, targetSum));
         }
 
         private static void ValidParenthesis()
