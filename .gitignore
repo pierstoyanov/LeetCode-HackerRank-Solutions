@@ -138,9 +138,16 @@ vscode
 
 bin/
 obj/
+x64/
+x86/
 
-
+.sln
+.exe
 .zip
 .docx
 *.zip
 *.docx
+*.exe
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
