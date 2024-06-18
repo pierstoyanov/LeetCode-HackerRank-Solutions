@@ -33,13 +33,13 @@ ListNode* readListFromFile(const std::string& filename) {
 
     std::istringstream iss(line);
     int value;
-    ListNode* head = nullptr;
+    ListNode* h = nullptr;
     ListNode* tail = nullptr;
 
     while (iss >> value) {
         ListNode* newNode = new ListNode(value);
-        if (!head) {
-            head = newNode;
+        if (!h) {
+            h = newNode;
             tail = newNode;
         }
         else {
@@ -49,67 +49,63 @@ ListNode* readListFromFile(const std::string& filename) {
     }
 
     file.close();
-    return head;
+    return h;
 }
 
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-    ListNode* h;
-    
-    if (list1 && list2) {
-        if (list1->val <= list2->val) {
-            h = new ListNode(list1->val);
-            list1 = list1->next;
-        }
-        else {
-            h = new ListNode(list2->val);
-            list2 = list2->next;
-        }
+    // check one of the ll is not empty 
+    if (list1 == nullptr) {
+        return list2;
+    }
+    if (list2 == nullptr) {
+        return list1;
+    }
+
+    // new ll start
+    ListNode* head;
+
+    // choose starting node
+    if (list1->val <= list2->val) {
+        head = list1;
+        list1 = list1->next;
     }
     else {
-        if (list1) {
-            h = list1;
-        }
-        if (list2) {
-            h = list2;
-        }
-        return h;
+        head = list2;
+        list2 = list2->next;
     }
-    
-    ListNode* tail = h;
+
+    // new ll tail (current node)
+    ListNode* tail = head;
 
     while (list1 || list2) {
-        ListNode* newNode = nullptr;
 
         if (list1 && list2) {
             if (list1->val < list2->val) {
-                newNode = new ListNode(list1->val);
-                list1 = list1->next;
+                tail->next = list1; // add node to new ll
+                tail = tail->next; // move tail to end of new ll
+                list1 = list1->next; // pop node from list1
             }
             else {
-                newNode = new ListNode(list2->val);
+                tail->next = list2;
+                tail = tail->next;
                 list2 = list2->next;
             }
-            
-            tail->next = newNode;
-            tail = tail->next;
         }
         else {
+            // remainder of the longer list
             if (list1) {
-                newNode = new ListNode(list1->val);
-                list1 = list1->next;
+                tail->next = list1;
+                list1 = nullptr;
             }
 
             if (list2) {
-                newNode = new ListNode(list2->val);
-                list2 = list2->next;
+                tail->next = list2;
+                list2 = nullptr;
             }
-
-            tail->next = newNode;
-            tail = tail->next;
         }
     }
 
-    return h;
+    return head;
 }
 
 void printList(ListNode* head) {
